@@ -28,6 +28,14 @@ public class WeatherReport {
             temperatures.add(new Temperature("Los Angeles", "FL", 45, 63));
         }
 
+        public void displayTemperatures() {
+            for (Temperature temp : temperatures) {
+                System.out.println(temp.getCity() + "," +
+                    temp.getState() + "," + "| Low: " +
+                    temp.getLow() + "| High: " + 
+                    temp.getHigh());
+            }
+        }
 }
 /*
  * Comparator to sort by the city stored in a Temperature object
