@@ -4,12 +4,19 @@ import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Comparator;
+import java.util.LinkedList;
 
 /**
  * @author John Cigas
- * Put your name and date and description here.
+ * David Montenegro 19 November 2020
+ * CS352-Unit 5 Assignment 2
  */
 public class WeatherReport {
+        private LinkedList<Temperature> temperatures;
+
+        public WeatherReport() {
+            temperatures = new LinkedList<Temperature>();
+        }
 
 }
 /*
