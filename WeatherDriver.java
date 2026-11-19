@@ -1,7 +1,9 @@
 import java.io.FileNotFoundException;
 /**
  * @author John Cigas
- * Put your name and date and description here.
+ * David Montenegro
+ * 19 November 2020
+ * CS352-Unit 5 Assignment 2
  */
 public class WeatherDriver {
 
