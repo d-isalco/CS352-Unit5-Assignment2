@@ -18,6 +18,7 @@ public class Temperature {
 		this.high = high;
 	}
 
+	//getter methods
 	public String getCity() {
 		return city;
 	}
@@ -32,5 +33,22 @@ public class Temperature {
 
 	public String getHigh() {
 		return high;
+	}
+
+	//setter methods
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public void setLow(String low) {
+		this.low = low;
+	}
+
+	public void setHigh(String high) {
+		this.high = high;
 	}
 }
