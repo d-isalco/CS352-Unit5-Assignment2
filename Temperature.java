@@ -6,12 +6,12 @@
 public class Temperature {
 	private String city;
 	private String state;
-	private String low;
-	private String high;
+	private int low;
+	private int high;
 
 	
 	/* Add appropriate instance attributes, constructors, and accessor/mutator methods */
-	public Temperature(String city, String state, String low, String high){
+	public Temperature(String city, String state, int low, int high){
 		this.city = city;
 		this.state = state;
 		this.low = low;
@@ -27,11 +27,11 @@ public class Temperature {
 		return state;
 	}
 
-	public String getLow() {
+	public int getLow() {
 		return low;
 	}
 
-	public String getHigh() {
+	public int getHigh() {
 		return high;
 	}
 
@@ -44,11 +44,16 @@ public class Temperature {
 		this.state = state;
 	}
 
-	public void setLow(String low) {
+	public void setLow(int low) {
 		this.low = low;
 	}
 
-	public void setHigh(String high) {
+	public void setHigh(int high) {
 		this.high = high;
+	}
+
+	//Differential method
+	public int Differential() {
+		return Math.abs(high - low);
 	}
 }
