@@ -19,20 +19,20 @@ public class WeatherReport {
 
             temperatures.add(new Temperature("Tampa", "FL", 59, 71));
             temperatures.add(new Temperature("Miami", "FL", 70, 82));
-            temperatures.add(new Temperature("Chicago", "FL", 20, 30));
-            temperatures.add(new Temperature("Denver", "FL", 12, 40));
-            temperatures.add(new Temperature("Seattle", "FL", 28, 72));
+            temperatures.add(new Temperature("Chicago", "IL", 20, 30));
+            temperatures.add(new Temperature("Denver", "CO", 12, 40));
+            temperatures.add(new Temperature("Seattle", "WA", 28, 42));
             temperatures.add(new Temperature("Orlando", "FL", 57, 72));
-            temperatures.add(new Temperature("Phonix", "FL", 45, 69));
-            temperatures.add(new Temperature("Atanta", "FL", 36, 48));
-            temperatures.add(new Temperature("Los Angeles", "FL", 45, 63));
+            temperatures.add(new Temperature("Phoenix", "AZ", 45, 69));
+            temperatures.add(new Temperature("Atlanta", "GA", 36, 48));
+            temperatures.add(new Temperature("Los Angeles", "CA", 45, 63));
         }
 
         public void displayTemperatures() {
             for (Temperature temp : temperatures) {
-                System.out.println(temp.getCity() + "," +
-                    temp.getState() + "," + "| Low: " +
-                    temp.getLow() + "| High: " + 
+                System.out.println(temp.getCity() + ", " +
+                    temp.getState() + ", " + " | Low: " +
+                    temp.getLow() + " | High: " + 
                     temp.getHigh());
             }
         }
