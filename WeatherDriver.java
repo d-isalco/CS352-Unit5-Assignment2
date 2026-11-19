@@ -13,15 +13,6 @@ public class WeatherDriver {
 		WeatherReport report = new WeatherReport();
 		report.displayTemperatures();
 
-		/*making sure class is working properly
-		Temperature tampa = new Temperature("Tampa", "FL", 50, 71);
-		System.out.println("City: " + tampa.getCity());
-		System.out.println("State: " + tampa.getState());
-		System.out.println("Low: " + tampa.getLow());
-		System.out.println("High: " + tampa.getHigh());
-		System.out.println("Differential: " + tampa.Differential());
-		*/
-
 		/*
 		String fileName = "weather.txt";
 		try { 
