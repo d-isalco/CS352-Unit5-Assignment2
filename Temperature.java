@@ -17,4 +17,20 @@ public class Temperature {
 		this.low = low;
 		this.high = high;
 	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public String getLow() {
+		return low;
+	}
+
+	public String getHigh() {
+		return high;
+	}
 }
