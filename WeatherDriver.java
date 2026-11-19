@@ -9,6 +9,15 @@ public class WeatherDriver {
 
 	public static void main(String[] args) {
 		System.out.println("Starting simulation");
+
+		//making sure class is working properly
+		Temperature tampa = new Temperature("Tampa", "FL", 50, 80);
+		System.out.println("City: " + tampa.getCity());
+		System.out.println("State: " + tampa.getState());
+		System.out.println("Low: " + tampa.getLow());
+		System.out.println("High: " + tampa.getHigh());
+		System.out.println("Differential: " + tampa.Differential());
+		
 		/*
 		String fileName = "weather.txt";
 		try { 
