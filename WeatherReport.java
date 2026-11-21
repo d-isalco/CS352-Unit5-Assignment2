@@ -1,7 +1,5 @@
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -47,7 +45,7 @@ public class WeatherReport {
                 String state = data[10];
 
                 int high = Integer.parseInt(data[5]);
-                int low = Integer.parseInt(data[5]);
+                int low = Integer.parseInt(data[6]);
 
                 Temperature temp = new Temperature(city, state, low, high);
                 temperatures.add(temp);
@@ -59,7 +57,7 @@ public class WeatherReport {
         public void displayTemperatures() {
             for (Temperature temp : temperatures) {
                 System.out.println(temp.getCity() + ", " +
-                    temp.getState() + ", " + " | Low: " +
+                    temp.getState() + " | Low: " +
                     temp.getLow() + " | High: " + 
                     temp.getHigh());
             }
@@ -89,7 +87,7 @@ public class WeatherReport {
             Temperature previous = null;
 
             for(Temperature current : temperatures){
-                if (previous != null){;
+                if (previous != null){
                     if(previous.getHigh() > current.getHigh()){
                         return false;
                     }
@@ -98,7 +96,7 @@ public class WeatherReport {
             }
             return true;
         }
-        
+
      //Determines whether to sort by city or high teperature
         public void sortWithCollections(String by){
             if(by.equalsIgnoreCase("City")){
@@ -123,8 +121,42 @@ public class WeatherReport {
                 System.out.println("Invalid sorting option.");
                 return;
             }
-
         }
+
+        //Recursive merge sort helper method
+        private LinkedList<Temperature> mergeSort(
+            LinkedList<Temperature> list, 
+            Comparator<Temperature> comparator){
+            
+            //Base case: A list of 0 or 1 is already sorted
+            if(list.size() <= 1 ){
+                return list;
+            }
+
+            //Find the middle of the list
+            int middle = list.size() / 2;
+
+            //Create two empty LinkedLists
+            LinkedList<Temperature> left = new LinkedList<>();
+            LinkedList<Temperature> right = new LinkedList<>();
+
+            //Divide the original list into two halves
+            int index = 0;
+        
+            for(Temperature temp : list){
+                if (index < middle){
+                    left.add(temp);
+                }
+                else {
+                    right.add(temp);
+                }
+                index++;
+            }
+            return list;
+        }    
+
+    }
+
 
 /*
  * Comparator to sort by the city stored in a Temperature object
@@ -146,6 +178,5 @@ class SortByHigh implements Comparator<Temperature> {
     {
         return t1.getHigh() - t2.getHigh();
     }
-}
 
-}//End of Weather Report
+}
