@@ -121,6 +121,9 @@ public class WeatherReport {
             System.out.println("Invalid sorting option.");
             return;
         }
+
+        //Sort the LikedList using our recursive merge sort
+        temperatures = mergeSort(temperatures, comparator);
     }
 
     //Recursive merge sort helper method
@@ -157,8 +160,8 @@ public class WeatherReport {
         left = mergeSort(left, comparator);
         right = mergeSort(right, comparator);
             
-        //Temporary return until the merger step is complete
-        return list;
+        //Merge the two sorted halves and return the final result
+        return merge(left, right, comparator);
     }    
 
     private LinkedList<Temperature> merge(
