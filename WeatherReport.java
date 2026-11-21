@@ -68,6 +68,23 @@ public class WeatherReport {
         public int getRecordCount(){
 			return temperatures.size();
 		}
+
+
+        public boolean isSortedByCity(){
+            Temperature previous = null;
+
+            for (Temperature current : temperatures){
+                if (previous != null){
+                    if (previous.getCity().compareTo(current.getCity()) > 0 ){
+                        return false;
+                    }
+                }
+                previous = current;                
+
+            }
+            return true;
+        }
+
 }
 /*
  * Comparator to sort by the city stored in a Temperature object

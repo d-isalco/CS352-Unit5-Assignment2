@@ -21,7 +21,9 @@ public class WeatherDriver {
 			System.out.println("Total weather records: " + 
 				fileReport.getRecordCount());
 		}
+
 		
+
 		catch (FileNotFoundException e){
 			System.out.println("Cannot find weather.txt");
 		}
