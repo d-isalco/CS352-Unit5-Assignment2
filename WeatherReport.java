@@ -38,6 +38,21 @@ public class WeatherReport {
                 String header = input.nextLine();
                 System.out.println("Header: " + header);
             }
+
+            while(input.hasNextLine()){
+                String line = input.nextLine();
+                String[] data = line.split(",");
+
+                String city = data[1];
+                String state = data[10];
+
+                int high = Integer.parseInt(data[5]);
+                int low = Integer.parseInt(data[5]);
+
+                Temperature temp = new Temperature(city, state, low, high);
+                temperatures.add(temp);
+            }
+
             input.close();
         }
 
