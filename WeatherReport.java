@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Comparator;
 import java.util.LinkedList;
-
+import java.io.FileNotFoundException;
 /**
  * @author John Cigas
  * David Montenegro 19 November 2020
@@ -13,7 +13,8 @@ import java.util.LinkedList;
  */
 public class WeatherReport {
         private LinkedList<Temperature> temperatures;
-
+        
+        // Constructor to create a WeatherReport object with a list of temperatures
         public WeatherReport() {
             temperatures = new LinkedList<Temperature>();
 
@@ -26,6 +27,18 @@ public class WeatherReport {
             temperatures.add(new Temperature("Phoenix", "AZ", 45, 69));
             temperatures.add(new Temperature("Atlanta", "GA", 36, 48));
             temperatures.add(new Temperature("Los Angeles", "CA", 45, 63));
+        }
+        
+        public WeatherReport(String fileName) throws FileNotFoundException{
+            temperatures = new LinkedList<Temperature>();
+
+            Scanner input = new Scanner(new File(fileName));
+
+            if (input.hasNextLine()) {
+                String header = input.nextLine();
+                System.out.println("Header: " + header);
+            }
+            input.close();
         }
 
         public void displayTemperatures() {
