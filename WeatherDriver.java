@@ -32,6 +32,21 @@ public class WeatherDriver {
 		//Verify the sorting worked
 		System.out.println("Sorted by City? "+
 			report.isSortedByCity());
+		
+		System.out.println("\nSorting test list by High...");
+
+		//Create a new report with the original nine cities
+		WeatherReport highReport = new WeatherReport();
+
+		//Sort the LinkedList by high temp
+		highReport.sortWithCollections("High");
+
+		//Display the sorted temp
+		highReport.displayTemperatures();
+
+		//Verify the sorting worked
+		System.err.println("Sorted by High? " +
+			highReport.isSortedByHigh());
 
 		try{
 			WeatherReport fileReport = new WeatherReport("weather.txt");
