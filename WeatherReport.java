@@ -85,7 +85,28 @@ public class WeatherReport {
             return true;
         }
 
-}
+        public boolean isSortedByHigh() {
+            Temperature previous = null;
+
+            for(Temperature current : temperatures){
+                if (previous != null){;
+                    if(previous.getHigh() > current.getHigh()){
+                        return false;
+                    }
+                }           
+                previous = current;    
+            }
+            return true;
+        }
+
+        public void sortWithCollections(String by){
+            if(by.equalsIgnoreCase("City")){
+                Collections.sort(temperatures, new SortByCity());
+            }
+            else if(by.equalsIgnoreCase("High")){
+                Collections.sort(temperatures, new SortByHigh());
+            }
+        }
 /*
  * Comparator to sort by the city stored in a Temperature object
  */
@@ -107,3 +128,5 @@ class SortByHigh implements Comparator<Temperature> {
         return t1.getHigh() - t2.getHigh();
     }
 }
+
+}//End of Weather Report

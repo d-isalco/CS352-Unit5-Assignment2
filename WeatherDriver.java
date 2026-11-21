@@ -17,6 +17,22 @@ public class WeatherDriver {
 		System.out.println("Test list sorted by City? "+
 			report.isSortedByCity());
 
+		System.out.println("Test list sorted by hihg? " +
+			report.isSortedByHigh());
+		
+		
+		System.out.println("\nSorting test list by City...");
+
+		//Sort the LinkedList alphabetically
+		report.sortWithCollections("City");
+
+		//Display the sorte list
+		report.displayTemperatures();
+
+		//Verify the sorting worked
+		System.out.println("Sorted by City? "+
+			report.isSortedByCity());
+
 		try{
 			WeatherReport fileReport = new WeatherReport("weather.txt");
 
@@ -26,6 +42,9 @@ public class WeatherDriver {
 
 			System.out.println("File sorted by City? " + 
 				fileReport.isSortedByCity());
+			
+			System.out.println("File sorted by High? " +
+				fileReport.isSortedByHigh());
 		}
 
 		catch (FileNotFoundException e){
