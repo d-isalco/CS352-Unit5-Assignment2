@@ -13,14 +13,19 @@ public class WeatherDriver {
 		WeatherReport report = new WeatherReport();
 		report.displayTemperatures();
 
+
 		try{
 			WeatherReport fileReport = new WeatherReport("weather.txt");
 
+			System.out.println("File loaded succesfully");
+			System.out.println("Total weather records: " + 
+				fileReport.getRecordCount());
 		}
+		
 		catch (FileNotFoundException e){
 			System.out.println("Cannot find weather.txt");
 		}
-		
+
 		/*
 		String fileName = "weather.txt";
 		try { 

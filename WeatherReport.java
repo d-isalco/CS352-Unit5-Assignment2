@@ -64,6 +64,10 @@ public class WeatherReport {
                     temp.getHigh());
             }
         }
+
+        public int getRecordCount(){
+			return temperatures.size();
+		}
 }
 /*
  * Comparator to sort by the city stored in a Temperature object
