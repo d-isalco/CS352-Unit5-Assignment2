@@ -13,6 +13,9 @@ public class WeatherDriver {
 		WeatherReport report = new WeatherReport();
 		report.displayTemperatures();
 
+		
+		System.out.println("Test list sorted by City? "+
+			report.isSortedByCity());
 
 		try{
 			WeatherReport fileReport = new WeatherReport("weather.txt");
@@ -20,9 +23,10 @@ public class WeatherDriver {
 			System.out.println("File loaded succesfully");
 			System.out.println("Total weather records: " + 
 				fileReport.getRecordCount());
-		}
 
-		
+			System.out.println("File sorted by City? " + 
+				fileReport.isSortedByCity());
+		}
 
 		catch (FileNotFoundException e){
 			System.out.println("Cannot find weather.txt");
