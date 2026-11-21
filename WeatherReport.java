@@ -98,7 +98,8 @@ public class WeatherReport {
             }
             return true;
         }
-
+        
+     //Determines whether to sort by city or high teperature
         public void sortWithCollections(String by){
             if(by.equalsIgnoreCase("City")){
                 Collections.sort(temperatures, new SortByCity());
@@ -107,6 +108,24 @@ public class WeatherReport {
                 Collections.sort(temperatures, new SortByHigh());
             }
         }
+
+        //Determines whether to sort by city or high teperature
+        public void sortWithMerge(String by){
+            Comparator<Temperature> comparator;
+
+            if (by.equalsIgnoreCase("City")){
+                comparator = new SortByCity();
+            }
+            else if (by.equalsIgnoreCase("High")){
+                comparator = new SortByHigh();
+            }
+            else{
+                System.out.println("Invalid sorting option.");
+                return;
+            }
+
+        }
+
 /*
  * Comparator to sort by the city stored in a Temperature object
  */
