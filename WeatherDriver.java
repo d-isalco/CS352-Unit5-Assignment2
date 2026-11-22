@@ -104,7 +104,7 @@ public class WeatherDriver {
 			//FileReport will be sued for Collections sort by City
 
 			//Create three additional reports with identical data
-			WeatherReport collectionsHighFile = new WeatherReport("weahter.txt");
+			WeatherReport collectionsHighFile = new WeatherReport("weather.txt");
 			WeatherReport mergeCityFile = new WeatherReport("weather.txt");
 			WeatherReport mergeHighFile = new WeatherReport("weather.txt");
 
