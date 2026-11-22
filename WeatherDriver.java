@@ -136,7 +136,28 @@ public class WeatherDriver {
 			System.out.println("Sorted by City: " + 
 			fileReport.isSortedByCity());
 
-			
+			System.out.println("\nPerformance Test 2: Collections Sort by High");
+
+			//Record the starting time
+			long startTimeHigh = System.nanoTime();
+
+			//Sort the LinkedList by High Temperature
+			collectionsHighFile.sortWithCollections("High");
+
+			//Record the ending Time
+			long endTimeHigh = System.nanoTime();
+
+			//Calculate execution time in seconds
+			double executionTimeHigh = 
+				(endTimeHigh - startTimeHigh) / 1_000_000_000.0;
+
+			//Display the execution time
+			System.out.println("Execution Time: " +
+				executionTimeHigh + " seconds");
+
+			//Verify the LinkedList was sorted correctly
+			System.out.println("Sorted by High? " + 
+				collectionsHighFile.isSortedByHigh());
 
 		}
 
