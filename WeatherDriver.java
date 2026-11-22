@@ -114,6 +114,16 @@ public class WeatherDriver {
 			System.out.println("Merge City: " + mergeCityFile.getRecordCount());
 			System.out.println("Merge High: " + mergeHighFile.getRecordCount());
 
+			System.out.println("\nChecking original sorting order...");
+			System.out.println("Collections City initially sorted? "+
+				fileReport.isSortedByCity());
+			System.out.println("Collections High initially sorted? "+
+				collectionsHighFile.isSortedByHigh());
+			System.out.println("Merge City initially sorted? "+
+				mergeCityFile.isSortedByCity());
+			System.out.println("Merge High initially sorted? "+
+				mergeHighFile.isSortedByHigh());
+
 			System.out.println("\nPerformance Test 1: Collections Sort by City");
 
 			//Record the starting time
@@ -204,6 +214,7 @@ public class WeatherDriver {
 			//Verify the LinkedList was sorted correctly
 			System.out.println("Sorted by High? " + 
 				mergeHighReport.isSortedByHigh());
+
 		}
 
 		catch (FileNotFoundException e){
