@@ -56,4 +56,4 @@ public class Temperature {
 	public int Differential() {
 		return Math.abs(high - low);
 	}
-}
+}//Final Commit

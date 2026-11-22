@@ -220,4 +220,4 @@ class SortByHigh implements Comparator<Temperature> {
         return t1.getHigh() - t2.getHigh();
     }
 
-}
+}//Final committ
