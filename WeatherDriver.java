@@ -98,6 +98,21 @@ public class WeatherDriver {
 			
 			System.out.println("File sorted by High? " +
 				fileReport.isSortedByHigh());
+
+			System.out.println("\nPreparing performance tests...");
+
+			//FileReport will be sued for Collections sort by City
+
+			//Create three additional reports with identical data
+			WeatherReport collectionsHighFile = new WeatherReport("weahter.txt");
+			WeatherReport mergeCityFile = new WeatherReport("weather.txt");
+			WeatherReport mergeHighFile = new WeatherReport("weather.txt");
+
+			//Verify all four lists have the same records
+			System.out.println("Collections City " + fileReport.getRecordCount());
+			System.out.println("Collections high: " + collectionsHighFile.getRecordCount());
+			System.out.println("Merge City: " + mergeCityFile.getRecordCount());
+			System.out.println("Merge High: " + mergeHighFile.getRecordCount());
 		}
 
 		catch (FileNotFoundException e){
