@@ -17,7 +17,7 @@ public class WeatherDriver {
 		System.out.println("Test list sorted by City? "+
 			report.isSortedByCity());
 
-		System.out.println("Test list sorted by hihg? " +
+		System.out.println("Test list sorted by high? " +
 			report.isSortedByHigh());
 		
 		
@@ -26,7 +26,7 @@ public class WeatherDriver {
 		//Sort the LinkedList alphabetically
 		report.sortWithCollections("City");
 
-		//Display the sorte list
+		//Display the sorted list
 		report.displayTemperatures();
 
 		//Verify the sorting worked
@@ -45,13 +45,51 @@ public class WeatherDriver {
 		highReport.displayTemperatures();
 
 		//Verify the sorting worked
-		System.err.println("Sorted by High? " +
+		System.out.println("Sorted by High? " +
 			highReport.isSortedByHigh());
+
+		System.out.println("\nTesting Merge Sort by City...");
+
+		//Create a new report with the original nine cities
+		WeatherReport mergeCityReport = new WeatherReport();
+
+		//verify the list is not sorted before the test
+		System.out.print("Before Merge Sort: " +
+			mergeCityReport.isSortedByCity()+"\n");
+
+		//Sort using custom merge sort
+		mergeCityReport.sortWithMerge("City");
+
+		//Display the sorted records
+		mergeCityReport.displayTemperatures();
+
+		//verify the results
+		System.out.println("After Merge Sort: " + 
+			mergeCityReport.isSortedByCity() + "\n");
+
+		 System.out.println("\nTesting Merge Sort by High...");
+
+		 //Create a new report with the original nine cities
+		 WeatherReport mergeHighReport = new WeatherReport();
+
+		 //Check if the list is sorted before merge sort
+		 System.out.println("Before Merge Sort: "+
+			mergeHighReport.isSortedByHigh());
+
+		//Sort by high temparature using merge sort
+		mergeHighReport.sortWithMerge("High");
+
+		//Display the sorted records
+		mergeHighReport.displayTemperatures();
+
+		//verify that the sorting worked
+		System.out.println("After Merger Sort: " + 
+			mergeHighReport.isSortedByHigh() + "\n");
 
 		try{
 			WeatherReport fileReport = new WeatherReport("weather.txt");
 
-			System.out.println("File loaded succesfully");
+			System.out.println("File loaded successfully");
 			System.out.println("Total weather records: " + 
 				fileReport.getRecordCount());
 
