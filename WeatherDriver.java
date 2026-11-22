@@ -113,6 +113,31 @@ public class WeatherDriver {
 			System.out.println("Collections high: " + collectionsHighFile.getRecordCount());
 			System.out.println("Merge City: " + mergeCityFile.getRecordCount());
 			System.out.println("Merge High: " + mergeHighFile.getRecordCount());
+
+			System.out.println("\nPerformance Test 1: Collections Sort by City");
+
+			//Record the starting time
+			long startTime = System.nanoTime();
+
+			//Sort the LinkedList by City
+			fileReport.sortWithCollections("City");
+
+			//Record the ending time
+			long endTime = System.nanoTime();
+
+			//Calculate execution time in seconds
+			double executionTime = (endTime - startTime) / 1_000_000_000.0;
+
+			//Display the resuls
+			System.out.println("Execution Time: " +
+				executionTime + " seconds");
+			
+			//Verify the LinkedList was sorted correctly
+			System.out.println("Sorted by City: " + 
+			fileReport.isSortedByCity());
+
+			
+
 		}
 
 		catch (FileNotFoundException e){
